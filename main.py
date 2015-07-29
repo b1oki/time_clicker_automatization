@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from win32gui import GetWindowText, GetForegroundWindow
 import time
 import win32api
 import win32con
@@ -46,7 +47,7 @@ def run():
             else:
                 is_click = True
             time.sleep(0.1)
-        if is_click:
+        if is_click and GetWindowText(GetForegroundWindow())=='Time Clickers':
             x, y = win32api.GetCursorPos()
             mouse_click(x, y)
             if counter > 1000:
