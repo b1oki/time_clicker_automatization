@@ -6,6 +6,8 @@ Time Clickers autoclicker and updater
   [1]: http://www.youtube.com/watch?v=lszIoVU7CdY
   [2]: https://i.ytimg.com/vi_webp/lszIoVU7CdY/hqdefault.webp (Video tutorial)
 
+[Steam Guide](http://steamcommunity.com/sharedfiles/filedetails/?id=487725714)
+
 Installation
 -------------
 Go to releases and download the latest version.
