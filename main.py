@@ -4,7 +4,7 @@ import time
 import win32api
 import win32con
 
-__author__ = 'b1oki'
+__author__ = 'b1oki, hakonw'
 
 KEY_A = 0x41
 KEY_S = 0x53
