@@ -1,5 +1,5 @@
 # time_clicker_automatization
-Time Clickers autocliker and updater
+Time Clickers autoclicker and updater
 
 [![Link to Video tutorial:][2]][1]
 
@@ -8,8 +8,8 @@ Time Clickers autocliker and updater
 
 Installation
 -------------
-Go to releases and download the lates version.
-Unzip the file
+Go to releases and download the latest version.
+Unzip the file. 
 Run *TimeClikcersAuto.exe* and the *Time Clickers* game.
 
 
