@@ -6,18 +6,42 @@ import win32con
 
 __author__ = 'b1oki, hakonw'
 
+# upgrade keys
 KEY_A = 0x41
 KEY_S = 0x53
 KEY_D = 0x44
 KEY_F = 0x46
 KEY_G = 0x47
-gamename = unicode('Time Clickers')
+
+# skills keys
+KEY_1 = 0x10
+KEY_2 = 0x10
+KEY_3 = 0x10
+KEY_4 = 0x10
+KEY_5 = 0x10
+KEY_6 = 0x10
+KEY_7 = 0x10
+KEY_8 = 0x10
+KEY_9 = 0x10
+KEY_0 = 0x10
+
+upgrades_keys = (KEY_G, KEY_F, KEY_S, KEY_D, KEY_A)
+skills_keys = (win32con.VK_SPACE, )
+
+gamename = 'Time Clickers'
+sleeps_delay_not_play = 0.3
+sleeps_delay_after_click = 0.5
+sleeps_delay_between_steps = 0.002
 
 
 def win_check(win_name): # __contributer__ = 'hakonw'
     hwnd = GetForegroundWindow()
-    if GetWindowText(hwnd) != win_name:
-        time.sleep(0.3) # sleeps for a short time if not in game to reduce stress on pc
+    try:
+        if GetWindowText(hwnd) != win_name:
+            time.sleep(sleeps_delay_not_play) # sleeps for a short time if not in game to reduce stress on pc
+            return False
+    except UnicodeWarning as error:
+        print 'UnicodeWarning: ', error
         return False
     rect = GetWindowRect(hwnd) # get the window posission
     width = rect[2] - rect[0] 
@@ -47,6 +71,8 @@ def run():
     print 'Use CTRL to turn it on/off and use Insert to shut down the script'
     print 'Made by b1oki & hakonw'
     is_click = False
+    in_focus = False
+    focus_last_state = in_focus
     counter = 0
     while True:
         if win32api.GetAsyncKeyState(win32con.VK_INSERT):
@@ -59,17 +85,27 @@ def run():
             else:
                 is_click = True
                 print 'Script on'
-            time.sleep(0.5)
-        if is_click and win_check(gamename):
+            time.sleep(sleeps_delay_after_click)
+        in_focus = win_check(gamename)
+        if in_focus != focus_last_state:
+            focus_last_state = in_focus
+            if in_focus:
+                print 'Get focus'
+            else:
+                print 'Lost focus'
+        if is_click and in_focus:
             x, y = win32api.GetCursorPos()
             mouse_click(x, y)
             if counter > 1000:
                 counter = 0
                 # upgrade DPS
-                for key_code in (KEY_G, KEY_F, KEY_S, KEY_D, KEY_A):
+                for key_code in upgrades_keys:
+                    key_push(key_code)
+                # activate skills
+                for key_code in skills_keys:
                     key_push(key_code)
         counter += 1
-        time.sleep(0.002)
+        time.sleep(sleeps_delay_between_steps)
 
 if __name__ == '__main__':
     run()
