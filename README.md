@@ -17,7 +17,7 @@ Run *TimeClikcersAuto.exe* and the *Time Clickers* game.
 
 Usage
 --------------
-Press CTRL to enable auto-click and, periodically, keys G, F, D, S, A for upgrade.
+Press CTRL to enable auto-click and, periodically, keys G, F, D, S, A, C, H for upgrades and Space, 0, 7 for abilities.
 Press Insert (Ins) to close the application.
 
 ##### OLD Installation
