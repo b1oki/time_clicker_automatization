@@ -1,4 +1,8 @@
 # time_clicker_automatization
+
+[![GitHub release](https://img.shields.io/github/release/b1oki/time_clicker_automatization?maxAge=2592000&style=for-the-badge)](https://github.com/b1oki/time_clicker_automatization)
+[![GitHub license](https://img.shields.io/github/license/b1oki/time_clicker_automatization?style=for-the-badge)](https://github.com/b1oki/time_clicker_automatization)
+
 Time Clickers autoclicker and updater
 
 [![Link to Video tutorial:][2]][1]
